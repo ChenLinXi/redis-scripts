@@ -35,7 +35,7 @@ class redisCrud():
 		except Exception, e:
 			print e
 
-	#删除指定目录下的Lists
+	#删除指定目录文件下的Lists
 	def deleteListKeys(filepath):
 		f = open(filepath)
 		lines = f.readlines()
@@ -44,7 +44,7 @@ class redisCrud():
 			l =  ''.join(l).strip('\n')
 			self.deleteList(l)
 
-	#删除指定目录下的Keys
+	#删除指定目录文件下的Keys
 	def deleteKeys(filepath):
 		f = open(filepath)
 		lines = f.readlines()
@@ -62,7 +62,7 @@ class redisCrud():
 			l =  ''.join(l).strip('\n')
 			self.deleteHash(l)
 
-	#批量删除以xx为前缀的keys
+	#批量删除指定目录文件内以xx为前缀的keys
 	def deleteMockKeys(filepath, keyType):
 		f = open(filepath)
 		lines = f.readlines()
