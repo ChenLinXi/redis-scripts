@@ -14,7 +14,7 @@ class redisCrud():
 			(status, length) = commands.getstatusoutput("redis-cli -h "+self.host+" -p "+self.port + " llen "+keyName)
 			for i in range(length):
 				if length>i:
-					curl = "redis-cli -h "+self.host+" -p "+self.port + " ltrim " + keyName + length + " " + length - i
+					curl = "redis-cli -h "+self.host+" -p "+self.port + " ltrim " + keyName + " " + length + " " + length - i
 				else:
 					curl = "redis-cli -h "+self.host+" -p "+self.port + " ltrim " + keyName + " 0 0"
 				i += length/10
